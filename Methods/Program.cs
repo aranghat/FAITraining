@@ -34,7 +34,7 @@ namespace Methods
             }
 
             if (isSeniorCitizen && ctc > 200000)
-                taxPer = .01 %;
+                taxPer = .01F;
 
             return taxPer;
         }
