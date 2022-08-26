@@ -63,6 +63,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegateBasics", "DelegateB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegateTask", "DelegateTask\DelegateTask.csproj", "{0DAF723D-B4FE-44F1-8777-1123CCEF4F33}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileIOBasics", "FileIOBasics\FileIOBasics.csproj", "{64E999F8-6174-4BE7-9B14-81F1D33B1306}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -189,6 +191,10 @@ Global
 		{0DAF723D-B4FE-44F1-8777-1123CCEF4F33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DAF723D-B4FE-44F1-8777-1123CCEF4F33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DAF723D-B4FE-44F1-8777-1123CCEF4F33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64E999F8-6174-4BE7-9B14-81F1D33B1306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64E999F8-6174-4BE7-9B14-81F1D33B1306}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64E999F8-6174-4BE7-9B14-81F1D33B1306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64E999F8-6174-4BE7-9B14-81F1D33B1306}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
