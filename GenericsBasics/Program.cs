@@ -27,7 +27,6 @@ namespace GenericsBasics
             var employees = data.Get<Employee>();
             var projects = data.Get<Project>();
 
-
         }
     }
 }
