@@ -79,6 +79,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LinqBasics", "LinqBasics", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqBasics", "LinqBasics\LinqBasics.csproj", "{61A4EF6E-0C42-4EBB-A0D0-00BA2B3A19B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqJoins", "LinqJoins\LinqJoins.csproj", "{D1ACC022-89A8-4085-A8E9-B16EA864BF46}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -225,6 +227,10 @@ Global
 		{61A4EF6E-0C42-4EBB-A0D0-00BA2B3A19B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61A4EF6E-0C42-4EBB-A0D0-00BA2B3A19B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61A4EF6E-0C42-4EBB-A0D0-00BA2B3A19B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1ACC022-89A8-4085-A8E9-B16EA864BF46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1ACC022-89A8-4085-A8E9-B16EA864BF46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1ACC022-89A8-4085-A8E9-B16EA864BF46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1ACC022-89A8-4085-A8E9-B16EA864BF46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -265,6 +271,7 @@ Global
 		{1D52DA69-3C0D-4783-89AE-8293D721A33E} = {96BFB246-9C12-442C-A8A5-0C41ED534009}
 		{79281C1E-6558-4476-A99C-33D138A78664} = {FD5379DA-185F-4B50-BB74-38D6289DAF42}
 		{61A4EF6E-0C42-4EBB-A0D0-00BA2B3A19B5} = {D0F3DA11-8E9F-45E5-9949-1127DD8E216E}
+		{D1ACC022-89A8-4085-A8E9-B16EA864BF46} = {D0F3DA11-8E9F-45E5-9949-1127DD8E216E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C59D7E1F-1ECE-4EE7-8DA2-2B24D8DA0633}
