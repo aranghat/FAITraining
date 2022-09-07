@@ -1,4 +1,4 @@
-﻿using CalculaorLibrary;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +11,9 @@ namespace MyCalcApp
     {
         static void Main(string[] args)
         {
-            Calculator calculator = new Calculator();
-            Console.WriteLine(calculator.Add(10, 20));
-            Console.WriteLine(calculator.Add(20, 39));
+            //Calculator calculator = new Calculator();
+            //Console.WriteLine(calculator.Add(10, 20));
+            //Console.WriteLine(calculator.Add(20, 39));
         }
     }
 }
