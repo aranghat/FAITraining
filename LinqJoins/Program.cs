@@ -44,6 +44,51 @@ namespace LinqJoins
             orders.Add(o4);
             orders.Add(o5);
 
+            //var data = from o in orders
+            //           join p in products on o.ProductId equals p.ProductId
+            //           //select new { Order = o, Product = p };
+            //           select new { ProductName = p.Name, OrderID = o.OrderId, Status = o.OrderStatus };
+
+            var data = orders.Join(customers
+                                            , customer => customer.CustomerId
+                                            , order => order.CustomerId
+                                            , (customer, order) => new { order, customer });
+
+            //foreach (var d in data)
+            //    Console.WriteLine($"{d.ProductName}\t{d.OrderID}\t{d.Status}");
+
+            //foreach (var d in data)
+            //    Console.WriteLine(d.order.CustomerId + " " + d.customer.OrderStatus);
+
+            //if (orders.Any(d => d.OrderStatus != OrderStatus.DELIVERED))
+            //    Console.WriteLine("There are still items to be delivered");
+            //else
+            //    Console.WriteLine("All items are delivered");
+
+            //if (orders.Where(d => d.CustomerId == 1).All(d => d.OrderStatus == OrderStatus.DELIVERED))
+            //    Console.WriteLine("All items are delivered");
+            //else
+            //    Console.WriteLine("There are still items ot be deliverd");
+
+            for(int i=4; i<100;i++)
+            {
+                Customer c = new Customer();
+                c.CustomerId = 1000 + i;
+                c.Name = "Customer " + c.CustomerId;
+                c.Email = c.CustomerId + "@test.com";
+
+                customers.Add(c);
+            }
+
+            Console.WriteLine("Total Customers = " + customers.Count);
+
+            int pageSize = 20;
+            int pageNumber = 2;
+
+            foreach(var c in customers.Skip(pageSize * (pageNumber-1)).Take(pageSize))
+            {
+                Console.WriteLine(c);
+            }
         }
     }
 }
