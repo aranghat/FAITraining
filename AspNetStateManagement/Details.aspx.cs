@@ -11,7 +11,13 @@ namespace AspNetStateManagement
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request["pid"] != null)
+            {
+                var productid = Request.QueryString["pid"];
+                Product p = ProductRepository.FindById(int.Parse(productid));
 
+                lblProductName.Text = p.Name;
+            }
         }
     }
 }
