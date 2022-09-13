@@ -102,7 +102,48 @@
                     <asp:Parameter Name="ID" Type="Int32" />
                 </UpdateParameters>
             </asp:SqlDataSource>
+            <br />
+             <div class="card m-4">
+                 <div class="card-body p-0">
+                     <asp:GridView ID="GridView1" 
+                         BorderWidth="0" runat="server" 
+                         AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CssClass="table" 
+                         DataKeyNames="ID" DataSourceID="sqlCommerce">
+                <Columns>
+                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
+                    <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
+                    <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
+                    <asp:BoundField DataField="TotalStock" HeaderText="TotalStock" SortExpression="TotalStock" />
+                    <asp:BoundField DataField="UnitPrice" HeaderText="UnitPrice" SortExpression="UnitPrice" />
+                </Columns>
+                         <SelectedRowStyle CssClass="bg-primary" />
+            </asp:GridView>
+                 </div>
+             </div>
+            <br />
         </div>
+        <asp:GridView ID="GridView2" runat="server">
+        </asp:GridView>
+        <br />
+        <br />
+        <asp:DropDownList ID="DropDownList1" runat="server" 
+            CssClass="form-select my-4"
+            DataSourceID="sqlCustomers" DataTextField="Name" DataValueField="ID" AutoPostBack="True">
+        </asp:DropDownList>
+        <asp:SqlDataSource ID="sqlCustomers" runat="server" ConnectionString="<%$ ConnectionStrings:SREE_EMPLOYEEDBConnectionString %>" SelectCommand="SELECT [ID], [Name], [Address] FROM [Customers]"></asp:SqlDataSource>
+        <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" CssClass="table" DataSourceID="sqlOrders">
+            <Columns>
+                <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" />
+                <asp:BoundField DataField="OrderId" HeaderText="OrderId" SortExpression="OrderId" />
+                <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
+                <asp:BoundField DataField="DeliveryStatus" HeaderText="DeliveryStatus" SortExpression="DeliveryStatus" />
+            </Columns>
+        </asp:GridView>
+        <asp:SqlDataSource ID="sqlOrders" runat="server" ConnectionString="<%$ ConnectionStrings:SREE_EMPLOYEEDBConnectionString %>" SelectCommand="SELECT [Id], [OrderId], [Name], [DeliveryStatus] FROM [VW_ORDER_DETAILS] WHERE ([Id] = @Id)">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="DropDownList1" Name="Id" PropertyName="SelectedValue" Type="Int32" />
+            </SelectParameters>
+        </asp:SqlDataSource>
     </form>
 </body>
 </html>
