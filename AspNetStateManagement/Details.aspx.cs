@@ -11,6 +11,17 @@ namespace AspNetStateManagement
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (Application["PageViewCount"] == null)
+                Application["PageViewCount"] = 1;
+            else
+                Application["PageViewCount"] = (int)Application["PageViewCount"] + 1;
+
+            if (Session["PageViewCount"] == null)
+                Session["PageViewCount"] = 1;
+            else
+                Session["PageViewCount"] = (int)Session["PageViewCount"] + 1;
+
             if (Request["pid"] != null)
             {
                 var productid = Request.QueryString["pid"];
@@ -29,6 +40,12 @@ namespace AspNetStateManagement
 
                 lblProductName.Text = p.Name;
             }
+
+            if (Session["StartTime"] != null)
+                lblProductName.Text = Session["StartTime"].ToString();
+
+            lblPageView.Text = Session["PageViewCount"].ToString();
+            Label1.Text = Application["PageViewCount"].ToString();
         }
     }
 }

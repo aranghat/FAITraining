@@ -11,6 +11,9 @@
         <div>
             <h1>
                 <asp:Label ID="lblProductName" runat="server" Text="Label"></asp:Label></h1>
+
+             <asp:Label ID="lblPageView" ForeColor="Red" runat="server" Text="Label"></asp:Label>
+              <asp:Label ID="Label1" ForeColor="Blue" runat="server" Text="Label"></asp:Label>
         </div>
     </form>
 </body>
