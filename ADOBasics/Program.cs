@@ -93,6 +93,8 @@ namespace ADOBasics
                 cmd.CommandText  = "SELECT * FROM Customers";
                 cmd.Connection   = con;
 
+                con.BeginTransaction();
+
                 SqlDataAdapter da = new SqlDataAdapter(cmd); 
                 da.Fill(table);
                 //DisplayDataTable(table);
