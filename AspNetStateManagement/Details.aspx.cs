@@ -14,7 +14,18 @@ namespace AspNetStateManagement
             if (Request["pid"] != null)
             {
                 var productid = Request.QueryString["pid"];
-                Product p = ProductRepository.FindById(int.Parse(productid));
+                Product p = ProductRepository
+                    .FindById(int.Parse(productid));
+
+                lblProductName.Text = p.Name;
+            }
+
+            if(PreviousPage != null)
+            {
+                var ddl = (DropDownList)PreviousPage
+                    .FindControl("ddlSelectProduct");
+                Product p = ProductRepository
+                    .FindById(int.Parse(ddl.SelectedValue));
 
                 lblProductName.Text = p.Name;
             }

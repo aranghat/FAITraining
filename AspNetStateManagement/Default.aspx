@@ -10,6 +10,12 @@
     <form id="form1" runat="server">
         <div>
             <h1>Products</h1>
+            <asp:DropDownList ID="ddlSelectProduct" 
+                runat="server"></asp:DropDownList>
+            <asp:Button ID="Button1" runat="server"
+                Text="Show Product Details"
+                 PostBackUrl="~/Details.aspx"
+                />
         </div>
     </form>
 </body>

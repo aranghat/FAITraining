@@ -13,17 +13,23 @@ namespace AspNetStateManagement
         {
             if(!IsPostBack)
             {
+                //foreach(var product in ProductRepository.GetProducts())
+                //{
+                //    HyperLink link = new HyperLink();
+                //    link.Text = product.Name;
+                //    link.NavigateUrl = $"/Details.aspx?pid={product.Id}";
+
+                //    Page.Controls.Add(link);
+                //    Literal literal = new Literal();
+                //    literal.Text = "<br />";
+                //    Page.Controls.Add(literal);
+                //}
+
                 foreach(var product in ProductRepository.GetProducts())
                 {
-                    HyperLink link = new HyperLink();
-                    link.Text = product.Name;
-                    link.NavigateUrl = $"/Details.aspx?pid={product.Id}";
-
-                    Page.Controls.Add(link);
-                    Literal literal = new Literal();
-                    literal.Text = "<br />";
-                    Page.Controls.Add(literal);
+                    ddlSelectProduct.Items.Add(new ListItem(product.Name, product.Id.ToString()));
                 }
+
             }
         }
     }
