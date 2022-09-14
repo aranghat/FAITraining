@@ -144,6 +144,14 @@
                 <asp:ControlParameter ControlID="DropDownList1" Name="Id" PropertyName="SelectedValue" Type="Int32" />
             </SelectParameters>
         </asp:SqlDataSource>
+        <asp:GridView ID="GridView4" runat="server" AutoGenerateColumns="False">
+            <Columns>
+                <asp:BoundField DataField="Id" HeaderText="ID" />
+                <asp:BoundField DataField="Name" HeaderText="Product Name" />
+                <asp:ImageField DataImageUrlField="ImageUrl">
+                </asp:ImageField>
+            </Columns>
+        </asp:GridView>
     </form>
 </body>
 </html>
