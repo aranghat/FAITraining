@@ -1,0 +1,17 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Error.aspx.cs" Inherits="ASPNETAuth.Error" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <h1>Houston We got a problem !!!!</h1>
+            <h3>Houston -> Message Recieved, Working on it</h3>
+        </div>
+    </form>
+</body>
+</html>
