@@ -1,0 +1,23 @@
+﻿@model HelloMvc.Models.Book
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>BookDetails</title>
+</head>
+<body>
+    <div>
+        <img src="@Model.ImageUrl" width="300" />
+    </div>
+    <div> 
+        @Model.BookId
+    </div>
+    <div>
+        @Model.Name
+    </div>
+    <div>@Model.Author</div>
+</body>
+</html>

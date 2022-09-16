@@ -1,0 +1,32 @@
+﻿@model HelloMvc.Models.Book
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>New</title>
+   
+</head>
+<body>
+    <div> 
+        @if (ViewBag.Error != null)
+        {
+            <div>@ViewBag.Error</div>
+        }
+        <form action="/books/new" method="post">
+            @Html.TextBoxFor(model => model.BookId,new { @class="form-control" })
+            @Html.ValidationMessageFor(model => model.BookId,null,new { @class = "text-danger" })
+
+            @Html.TextBoxFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+
+            @Html.TextBoxFor(model => model.Author)
+            @Html.ValidationMessageFor(model => model.Author)
+
+            <button type="submit">Save Book</button>
+        </form>
+    </div>
+</body>
+</html>

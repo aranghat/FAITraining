@@ -1,0 +1,41 @@
+﻿@model List<HelloMvc.Models.Book>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        @*<ul>
+            @foreach (var book in Model)
+            {
+                <li>@book.Name</li>
+            }
+
+        </ul>*@
+        <a href="/books/new">Add a new book</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>Book Id</th>
+                    <th>Name</th>
+                    <th>Author</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var book in Model)
+                {
+                     <tr>
+                         <td>@book.BookId</td>
+                         <td><a href="/books/bookdetails/@book.BookId">@book.Name</a></td>
+                         <td>@book.Author</td>
+                     </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
