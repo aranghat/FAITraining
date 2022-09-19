@@ -40,12 +40,14 @@ namespace HelloMvc.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public ActionResult New()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public ActionResult New(Book book)
         {
             if (ModelState.IsValid)

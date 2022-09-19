@@ -28,7 +28,7 @@ namespace HelloMvc.Controllers
             return View();
         }
 
-
+        [AllowAnonymous]
         public ActionResult AboutUs()
         {
             return View();

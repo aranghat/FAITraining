@@ -16,7 +16,10 @@
             }
 
         </ul>*@
-        <a href="/books/new">Add a new book</a>
+        @if (User.IsInRole("Admin"))
+        {
+             <a href="/books/new">Add a new book</a>
+        }
         <table>
             <thead>
                 <tr>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HelloMvc.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -20,11 +21,12 @@ namespace HelloMvc.Controllers
         public ActionResult Index(string username
             , string password)
         {
-            if (username == "sree" 
-                && password == "12345")
-            {
+            var user = UserService.Authenticate(username, password);
+
+            if(user != null)
+            { 
                 FormsAuthentication
-                    .RedirectFromLoginPage("sree",false);
+                    .RedirectFromLoginPage(username,false);
             }
             else
                 ViewBag.Error = "Login Failed";
