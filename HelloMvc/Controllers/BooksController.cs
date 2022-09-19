@@ -1,6 +1,9 @@
 ﻿using HelloMvc.Models;
+using HelloMvc.Repo;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,25 +13,17 @@ namespace HelloMvc.Controllers
     [Authorize]
     public class BooksController : Controller
     {
-        static List<Book> books = new List<Book>();
+        List<Book> books = new List<Book>();
 
         public BooksController()
         {
-            if (books.Count == 0)
-            {
-                books.Add(new Book { BookId = 1001, Name = "Davinci Code"
-                    , Author = "Dan Brown" , ImageUrl= "/Images/1.jpg"
-                });
-                books.Add(new Book { BookId = 1002, Name = "Angels and Demons", Author = "Dan Brown" ,ImageUrl = "/Images/2.jpg" });
-                books.Add(new Book { BookId = 1003, Name = "The Monk Who Sold his Ferrari", Author = "Robin Sharma"
-                , ImageUrl = "/Images/3.webp"
-                });
-            }
+           
         }
 
         // GET: Books
         public ActionResult Index()
         {
+             books = new BookRepository().GetBooks();
             return View(books);
         }
 
