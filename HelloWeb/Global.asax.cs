@@ -11,6 +11,7 @@ namespace HelloWeb
     {
         protected void Application_Start(object sender, EventArgs e)
         {
+            Server.GetLastError();
         }
     }
 }

@@ -30,6 +30,7 @@
             <asp:CompareValidator ID="CompareValidator1" 
                  ControlToValidate="txtConfirmPassword"
                  ControlToCompare="txtPassword"
+                 Type="="
                             runat="server" 
                  Display="Dynamic"
                 ErrorMessage="Password and Confirm Password is not same"></asp:CompareValidator>

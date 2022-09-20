@@ -46,5 +46,35 @@ namespace AspNetWebApiBasics.Controllers
 
             return response;
         }
+
+       public HttpResponseMessage Put(Book book)
+       {
+            HttpResponseMessage response = new HttpResponseMessage();
+
+            if (books.Any(d => d.BookId == book.BookId))
+            {
+                var currentBook = books.First(d => d.BookId == book.BookId);
+                currentBook.Name = book.Name;
+                currentBook.Author = book.Author;
+                response.StatusCode = HttpStatusCode.OK;
+            }
+            else
+                response.StatusCode = HttpStatusCode.NotFound;
+            return response;
+       }
+        public HttpResponseMessage Delete(int id)
+        {
+            HttpResponseMessage response = new HttpResponseMessage();
+            var currentBook = books.FirstOrDefault(d => d.BookId == id);
+            if (currentBook != null)
+            {
+                books.Remove(currentBook);
+                response.StatusCode = HttpStatusCode.OK;
+            }
+            else
+                response.StatusCode = HttpStatusCode.NotFound;
+
+            return response;
+        }
     }
 }

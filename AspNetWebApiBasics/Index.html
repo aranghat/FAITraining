@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="books"></div>
+    <h1>Dashboard</h1>
+    <button type="button" onclick="onClick()">Fetch Books</button>
+    <script>
+        function onClick() {
+            window.fetch("api/books").then(d =>
+                d.json().then(d => {
+                    for (var i = 0; i < d.length; i++) {
+                        var element = document.createElement("div");
+                        element.innerHTML = d[i].Name;
+
+                        document.getElementById("books").append(element);
+                    }
+                }
+                    )
+            );
+        }
+    </script>
+</body>
+</html>
